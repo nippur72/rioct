@@ -71,7 +71,7 @@ function mount(selector, tag, props) {
     }
     else {
         updateStyles();
-        var tagList = Object.keys(tags);
+        var tagList = Object.keys(exports.tags);
         _.each(tagList, function (tagName) {
             var nodes = document.querySelectorAll(tagName);
             _.each(nodes, function (node) {
@@ -85,11 +85,9 @@ function mount(selector, tag, props) {
     }
 }
 exports.mount = mount;
-var tags = {};
-exports.tags = tags;
+exports.tags = {};
 var tagClasses = {};
-var styles = [];
-exports.styles = styles;
+exports.styles = [];
 function updateStyles() {
     var styleNode = document.querySelector("style[name=rioct]");
     if (!styleNode) {
@@ -97,16 +95,14 @@ function updateStyles() {
         styleNode.setAttribute("name", "rioct");
         document.head.appendChild(styleNode);
     }
-    var allStyles = styles.join('');
-    styleNode.innerHTML = styleParser ? styleParser(allStyles) : allStyles;
+    var allStyles = exports.styles.join('');
+    styleNode.innerHTML = exports.styleParser ? exports.styleParser(allStyles) : allStyles;
 }
 exports.updateStyles = updateStyles;
-var styleParser;
-exports.styleParser = styleParser;
 // @template decorator
 function template(tagName) {
     return function (target) {
-        var tagFunction = tags[tagName];
+        var tagFunction = exports.tags[tagName];
         if (!tagFunction) {
             throw "tag \"" + tagName + "\" not defined/loaded";
         }

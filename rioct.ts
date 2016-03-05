@@ -9,8 +9,8 @@ import _ = require("lodash");
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import observable from "./observable";
-                 
-class Observable {      
+                
+export class Observable {      
    on(events: string, callback: Function) {}; 
    one(events: string, callback: Function) {};
    off(events: string) {};
@@ -21,7 +21,7 @@ class Observable {
    }
 }  
 
-class Tag extends React.Component<any,any> implements Observable {
+export class Tag extends React.Component<any,any> implements Observable {
    on(events: string, callback: Function) {} 
    one(events: string, callback: Function) {}
    off(events: string) {}
@@ -42,7 +42,7 @@ class Tag extends React.Component<any,any> implements Observable {
    }
 }
 
-function mount(selector?: string, tag?: any, props?: any) {
+export function mount(selector?: string, tag?: any, props?: any) {
    if(selector && tag) {
       let mountNode = document.querySelector(selector);
       if(!mountNode) {
@@ -67,13 +67,13 @@ function mount(selector?: string, tag?: any, props?: any) {
    }
 }
 
-var tags:tagEntry = {};
+export var tags:tagEntry = {};
 
 var tagClasses: { [tagName: string]: any } = {};
 
-var styles = [];                          
+export var styles = [];                          
 
-function updateStyles() {
+export function updateStyles() {
    var styleNode = document.querySelector("style[name=rioct]") as HTMLStyleElement;
    if(!styleNode) {
       styleNode = document.createElement('style');
@@ -84,10 +84,10 @@ function updateStyles() {
    styleNode.innerHTML = styleParser ? styleParser(allStyles) : allStyles;      
 }
 
-var styleParser: (css: string)=>string;      
+export var styleParser: (css: string)=>string;      
 
 // @template decorator
-function template(tagName) {
+export function template(tagName) {
 	return function(target: Function) {
       var tagFunction = tags[tagName];
       if(!tagFunction) {
@@ -97,15 +97,3 @@ function template(tagName) {
       tagClasses[tagName] = target;
    }	
 }
-
-export {
-   Observable,
-   Tag,
-   mount,
-   tags,
-   styles,
-   updateStyles,
-   styleParser,
-   template
-}
-
