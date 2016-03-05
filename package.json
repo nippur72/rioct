@@ -1,0 +1,25 @@
+{
+  "name": "rioct",
+  "version": "0.0.1",
+  "description": "Template library for react",
+  "main": "rioct.js",
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonino Porcino <nino.porcino@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nippur72/rioct.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nippur72/rioct/issues"
+  },
+  "homepage": "https://github.com/nippur72/rioct#readme"
+}
