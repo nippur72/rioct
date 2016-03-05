@@ -3,8 +3,6 @@ bower_components/
 typings/
 bin/
 obj/
-*.js
-*.map
 
 
 # Windows image file caches
