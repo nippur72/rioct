@@ -26,6 +26,7 @@
     <TypeScriptCompile Include="observable.ts" />
     <Content Include="web.config" />
     <TypeScriptCompile Include="types.ts" />
+    <TypeScriptCompile Include="_references.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="rioct.ts" />
