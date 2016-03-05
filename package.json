@@ -2,7 +2,6 @@
   "name": "rioct",
   "version": "0.0.1",
   "description": "Template library for react",
-  "main": "rioct.js",
   "dependencies": {
     "lodash": "^4.6.1",
     "react": "^0.14.7",
@@ -24,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/nippur72/rioct/issues"
   },
-  "homepage": "https://github.com/nippur72/rioct#readme"
+  "homepage": "https://github.com/nippur72/rioct#readme",
+  "main": "index.js"
 }

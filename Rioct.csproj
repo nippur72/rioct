@@ -22,6 +22,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="index.ts" />
     <TypeScriptCompile Include="observable.ts" />
     <Content Include="web.config" />
     <TypeScriptCompile Include="types.ts" />
@@ -30,6 +31,7 @@
     <TypeScriptCompile Include="rioct.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="package.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
