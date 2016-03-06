@@ -74,7 +74,12 @@ function mount(selector, tag, props) {
                     console.warn("the mounting node <" + tagName + "> should not have children");
                 }
                 var tagClass = tagClasses[tagName];
-                ReactDOM.render(React.createElement(tagClass, {}), node);
+                try {
+                    ReactDOM.render(React.createElement(tagClass, {}), node);
+                }
+                catch (ex) {
+                    throw "failed to mount " + tagName + "() on DOM node <" + tagName + ">, error: " + ex.message;
+                }
             });
         });
     }

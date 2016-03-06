@@ -55,7 +55,12 @@ export function mount(selector?: string, tag?: any, props?: any) {
                console.warn(`the mounting node <${tagName}> should not have children`);
             }
             let tagClass = tagClasses[tagName];
-            ReactDOM.render( React.createElement(tagClass, {}), node);      
+            try {
+               ReactDOM.render( React.createElement(tagClass, {}), node);      
+            }
+            catch(ex) {
+               throw `failed to mount ${tagName}() on DOM node <${tagName}>, error: ${ex.message}`;
+            }
          });
       });
    }
