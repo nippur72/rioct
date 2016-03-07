@@ -2,7 +2,7 @@ node_modules/
 bower_components/
 bin/
 obj/
-
+.vs/
 
 # Windows image file caches
 Thumbs.db
