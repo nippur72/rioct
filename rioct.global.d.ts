@@ -23,4 +23,4 @@
    function template(tagName: any): (target: Function) => void;
 }
 
-declare function template(tagName: any): (target: Function) => void;
+declare function template(tagName: string | Function): (target: Function) => void;

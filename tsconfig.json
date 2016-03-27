@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "declaration": true,
+        "sourceMap": true
+    },
+    "files": [
+        "_references.ts",
+        "index.ts",
+        "observable.ts",
+        "types.ts",
+        "rioct.ts"
+    ]
+}

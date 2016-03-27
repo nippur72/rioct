@@ -1,13 +1,6 @@
 "use strict";
 var observable = function (el) {
-    /**
-     * Extend the original object or create a new empty one
-     * @type { Object }
-     */
     el = el || {};
-    /**
-     * Private variables and methods
-     */
     var callbacks = {}, slice = Array.prototype.slice, onEachEvent = function (e, fn) { e.replace(/\S+/g, fn); }, defineProperty = function (key, value) {
         Object.defineProperty(el, key, {
             value: value,
@@ -16,12 +9,6 @@ var observable = function (el) {
             configurable: false
         });
     };
-    /**
-     * Listen to the given space separated list of `events` and execute the `callback` each time an event is triggered.
-     * @param  { String } events - events ids
-     * @param  { Function } fn - callback function
-     * @returns { Object } el
-     */
     defineProperty('on', function (events, fn) {
         if (typeof fn != 'function')
             return el;
@@ -31,12 +18,6 @@ var observable = function (el) {
         });
         return el;
     });
-    /**
-     * Removes the given space separated list of `events` listeners
-     * @param   { String } events - events ids
-     * @param   { Function } fn - callback function
-     * @returns { Object } el
-     */
     defineProperty('off', function (events, fn) {
         if (events == '*' && !fn)
             callbacks = {};
@@ -55,12 +36,6 @@ var observable = function (el) {
         }
         return el;
     });
-    /**
-     * Listen to the given space separated list of `events` and execute the `callback` at most once
-     * @param   { String } events - events ids
-     * @param   { Function } fn - callback function
-     * @returns { Object } el
-     */
     defineProperty('one', function (events, fn) {
         function on() {
             el.off(events, on);
@@ -68,14 +43,7 @@ var observable = function (el) {
         }
         return el.on(events, on);
     });
-    /**
-     * Execute all callback functions that listen to the given space separated list of `events`
-     * @param   { String } events - events ids
-     * @returns { Object } el
-     */
     defineProperty('trigger', function (events) {
-        // getting the arguments
-        // skipping the first one
         var args = slice.call(arguments, 1), fns;
         onEachEvent(events, function (name) {
             fns = slice.call(callbacks[name] || [], 0);
@@ -96,6 +64,6 @@ var observable = function (el) {
     });
     return el;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = observable;
+exports.__esModule = true;
+exports["default"] = observable;
 //# sourceMappingURL=observable.js.map

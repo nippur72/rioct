@@ -10,7 +10,7 @@ var ReactDOM = require("react-dom");
 var observable_1 = require("./observable");
 var Observable = (function () {
     function Observable() {
-        observable_1.default(this);
+        observable_1["default"](this);
     }
     Observable.prototype.on = function (events, callback) { };
     ;
@@ -33,7 +33,7 @@ var Tag = (function (_super) {
     function Tag(props) {
         var _this = this;
         _super.call(this, props);
-        observable_1.default(this);
+        observable_1["default"](this);
         Object.defineProperty(this, "_refs", {
             get: function () { return _this.refs; },
             enumerable: true,
@@ -99,16 +99,26 @@ function updateStyles() {
     styleNode.innerHTML = exports.styleParser ? exports.styleParser(allStyles) : allStyles;
 }
 exports.updateStyles = updateStyles;
-// @template decorator
 function template(tagName) {
-    return function (target) {
-        var tagFunction = exports.tags[tagName];
-        if (!tagFunction) {
-            throw "tag \"" + tagName + "\" not defined/loaded";
-        }
-        target.prototype["render"] = tagFunction; //function() { try { return tagFunction() } catch(ex) { console.error(ex) } };               
-        tagClasses[tagName] = target;
-    };
+    if (typeof (tagName) === "string") {
+        return function (target) {
+            var tagFunction = exports.tags[tagName];
+            if (!tagFunction) {
+                throw "tag \"" + tagName + "\" not defined/loaded";
+            }
+            target.prototype["render"] = tagFunction;
+            tagClasses[tagName] = target;
+        };
+    }
+    else {
+        return function (target) {
+            var tagFunction = tagName;
+            if (!tagFunction) {
+                throw "tag function not defined/loaded";
+            }
+            target.prototype["render"] = tagFunction;
+        };
+    }
 }
 exports.template = template;
 //# sourceMappingURL=rioct.js.map

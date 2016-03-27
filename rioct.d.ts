@@ -19,4 +19,4 @@ export declare var tags: tagEntry;
 export declare var styles: any[];
 export declare function updateStyles(): void;
 export declare var styleParser: (css: string) => string;
-export declare function template(tagName: any): (target: Function) => void;
+export declare function template(tagName: string | Function): (target: Function) => void;
