@@ -28,6 +28,7 @@ var Observable = (function () {
     return Observable;
 }());
 exports.Observable = Observable;
+this["Component"] = React.Component;
 var Tag = (function (_super) {
     __extends(Tag, _super);
     function Tag(props) {
@@ -53,7 +54,7 @@ var Tag = (function (_super) {
         this.forceUpdate();
     };
     return Tag;
-}(React.Component));
+}(Component));
 exports.Tag = Tag;
 function mount(selector, tag, props) {
     if (selector && tag) {
