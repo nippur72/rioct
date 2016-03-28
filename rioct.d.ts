@@ -6,7 +6,7 @@ export declare class Observable {
     trigger(eventName: string, ...args: any[]): void;
     constructor();
 }
-export declare class Tag extends Component<any, any> implements Observable {
+export declare class Tag extends Component implements Observable {
     on(events: string, callback: Function): void;
     one(events: string, callback: Function): void;
     off(events: string): void;

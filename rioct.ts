@@ -16,7 +16,7 @@ export class Observable {
    }
 }
 
-export class Tag extends Component<any,any> implements Observable {
+export class Tag extends Component implements Observable {
    on(events: string, callback: Function) {}
    one(events: string, callback: Function) {}
    off(events: string) {}
