@@ -1,6 +1,6 @@
 {
   "name": "rioct",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "Template library for react",
   "dependencies": {
     "lodash": "^3.10.1",
