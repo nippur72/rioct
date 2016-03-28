@@ -1,5 +1,16 @@
 ﻿declare module Rioct
 {
+   class Component<P, S> implements React.ComponentLifecycle<P, S> {
+      constructor(props?: P, context?: any);
+      setState(f: (prevState: S, props: P) => S, callback?: () => any): void;
+      setState(state: S, callback?: () => any): void;
+      forceUpdate(callBack?: () => any): void;
+      render: () => JSX.Element;
+      props: P;
+      state: S;
+      context: {};
+      refs: {};
+   }
    class Observable {
        on(events: string, callback: Function): void;
        one(events: string, callback: Function): void;
@@ -7,7 +18,7 @@
        trigger(eventName: string, ...args: any[]): void;
        constructor();
    }
-   class Tag extends React.Component<any, any> implements Observable {
+   class Tag extends Component<any, any> implements Observable {
        on(events: string, callback: Function): void;
        one(events: string, callback: Function): void;
        off(events: string): void;
