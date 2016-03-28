@@ -1,21 +1,10 @@
-import * as React from "react";
+import Component from "./component";
 export declare class Observable {
     on(events: string, callback: Function): void;
     one(events: string, callback: Function): void;
     off(events: string): void;
     trigger(eventName: string, ...args: any[]): void;
     constructor();
-}
-export declare class Component<P, S> implements React.ComponentLifecycle<P, S> {
-    constructor(props?: P, context?: any);
-    setState(f: (prevState: S, props: P) => S, callback?: () => any): void;
-    setState(state: S, callback?: () => any): void;
-    forceUpdate(callBack?: () => any): void;
-    render: () => JSX.Element;
-    props: P;
-    state: S;
-    context: {};
-    refs: {};
 }
 export declare class Tag extends Component<any, any> implements Observable {
     on(events: string, callback: Function): void;

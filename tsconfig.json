@@ -12,6 +12,7 @@
         "index.ts",
         "observable.ts",
         "types.ts",
+        "component.ts",
         "rioct.ts"
     ]
 }

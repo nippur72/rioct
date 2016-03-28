@@ -8,6 +8,7 @@ var _ = require("lodash");
 var React = require("react");
 var ReactDOM = require("react-dom");
 var observable_1 = require("./observable");
+var component_1 = require("./component");
 var Observable = (function () {
     function Observable() {
         observable_1["default"](this);
@@ -28,18 +29,11 @@ var Observable = (function () {
     return Observable;
 }());
 exports.Observable = Observable;
-this["Component"] = React.Component;
 var Tag = (function (_super) {
     __extends(Tag, _super);
     function Tag(props) {
-        var _this = this;
         _super.call(this, props);
         observable_1["default"](this);
-        Object.defineProperty(this, "_refs", {
-            get: function () { return _this.refs; },
-            enumerable: true,
-            configurable: true
-        });
     }
     Tag.prototype.on = function (events, callback) { };
     Tag.prototype.one = function (events, callback) { };
@@ -54,7 +48,7 @@ var Tag = (function (_super) {
         this.forceUpdate();
     };
     return Tag;
-}(Component));
+}(component_1["default"]));
 exports.Tag = Tag;
 function mount(selector, tag, props) {
     if (selector && tag) {

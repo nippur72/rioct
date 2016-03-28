@@ -3,6 +3,7 @@ import _ = require("lodash");
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import observable from "./observable";
+import Component from "./component";
 
 export class Observable {
    on(events: string, callback: Function) {};
@@ -15,20 +16,6 @@ export class Observable {
    }
 }
 
-export declare class Component<P,S> implements React.ComponentLifecycle<P, S> {
-   constructor(props?: P, context?: any);
-   setState(f: (prevState: S, props: P) => S, callback?: () => any): void;
-   setState(state: S, callback?: () => any): void;
-   forceUpdate(callBack?: () => any): void;
-   render: () => JSX.Element;
-   props: P;
-   state: S;
-   context: {};
-   refs: {};
-}
-
-this["Component"] = React.Component;
-
 export class Tag extends Component<any,any> implements Observable {
    on(events: string, callback: Function) {}
    one(events: string, callback: Function) {}
@@ -38,11 +25,13 @@ export class Tag extends Component<any,any> implements Observable {
    constructor(props) {
       super(props);
       observable(this);
+      /*
       Object.defineProperty(this, "_refs", {
          get: ()=> this.refs,
          enumerable: true,
          configurable: true
       });
+      */
    }
 
    update() {
