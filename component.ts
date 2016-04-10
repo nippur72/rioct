@@ -1,6 +1,5 @@
 ﻿// This clones React.Component providing a slight different signature:
 // "render" is a property and not a member function
-// "refs" is a generic object
 //
 
 import * as React from "react";
@@ -14,7 +13,6 @@ export declare class Component implements React.ComponentLifecycle<any, any> {
    props: any;
    state: any;
    context: {};
-   refs: {};
 }
 
 var patched = React.Component as (typeof Component);

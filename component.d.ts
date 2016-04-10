@@ -7,7 +7,6 @@ export declare class Component implements React.ComponentLifecycle<any, any> {
     props: any;
     state: any;
     context: {};
-    refs: {};
 }
 declare var patched: typeof Component;
 export default patched;
