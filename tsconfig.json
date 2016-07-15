@@ -6,7 +6,8 @@
         "preserveConstEnums": true,
         "declaration": true,
         "sourceMap": true,
-        "outDir": "dist"
+        "sourceRoot": "src",
+        "outDir": "dist"        
     },
     "files": [
         "src/declarations.ts",
