@@ -22,14 +22,14 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="component.ts" />
-    <TypeScriptCompile Include="declarations.ts" />
-    <TypeScriptCompile Include="index.ts" />
+    <TypeScriptCompile Include="src\component.ts" />
+    <TypeScriptCompile Include="src\declarations.ts" />
+    <TypeScriptCompile Include="src\index.ts" />
     <Content Include="web.config" />
-    <TypeScriptCompile Include="types.ts" />
+    <TypeScriptCompile Include="src\types.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="rioct.ts" />
+    <TypeScriptCompile Include="src\rioct.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
@@ -41,7 +41,9 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="dist\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

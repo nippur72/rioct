@@ -118,4 +118,3 @@ function template(tagName) {
     }
 }
 exports.template = template;
-//# sourceMappingURL=rioct.js.map
