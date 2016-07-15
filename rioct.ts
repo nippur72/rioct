@@ -1,10 +1,10 @@
 ﻿
-import _ = require("lodash");
+import * as _ from "lodash";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as observable from "riot-observable";
 import Component from "./component";
-
+            
 export class Observable {
    on(events: string, callback: Function) {};
    one(events: string, callback: Function) {};
@@ -59,7 +59,9 @@ export function mount(selector?: string, tag?: any, props?: any) {
             }
             let tagClass = tagClasses[tagName];
             try {
-               ReactDOM.render( React.createElement(tagClass, {}), node);
+               let props = {};               
+               _.each(node.attributes, n => { props[n.name] = n.value; });
+               ReactDOM.render( React.createElement(tagClass, props), node);
             }
             catch(ex) {
                throw `failed to mount ${tagName}() on DOM node <${tagName}>, error: ${ex.message}`;
