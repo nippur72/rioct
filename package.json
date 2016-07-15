@@ -8,7 +8,9 @@
     "react-dom": "^15.0.1"
   },
   "devDependencies": {
-    "typescript": "^1.9.0-dev.20160328"
+    "@types/lodash": "0.0.27",
+    "@types/react": "^0.14.27",
+    "@types/react-dom": "^0.14.13"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
