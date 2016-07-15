@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Template library for react",
   "dependencies": {
-    "lodash": "^3.10.1",
+    "lodash": "^4.13.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
     "riot-observable": "^3.0.0-alpha.1"
