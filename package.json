@@ -1,6 +1,6 @@
 {
   "name": "rioct",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Template library for react",
   "dependencies": {
     "lodash": "^4.13.1",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },  
+  },
   "typescript": {
     "definition": "index.d.ts"
   },

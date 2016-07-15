@@ -1,0 +1,11 @@
+node_modules/
+bin/
+obj/
+*.sln
+*.csproj
+web.Debug.config
+web.Release.config
+web.config
+
+
+
