@@ -8,10 +8,9 @@
         "sourceMap": true
     },
     "files": [
-        "_references.ts",
-        "index.ts",
-        "observable.ts",
+        "declarations.ts",
         "types.ts",
+        "index.ts",       
         "component.ts",
         "rioct.ts"
     ]

@@ -7,11 +7,11 @@ var __extends = (this && this.__extends) || function (d, b) {
 var _ = require("lodash");
 var React = require("react");
 var ReactDOM = require("react-dom");
-var observable_1 = require("./observable");
+var observable = require("riot-observable");
 var component_1 = require("./component");
 var Observable = (function () {
     function Observable() {
-        observable_1["default"](this);
+        observable(this);
     }
     Observable.prototype.on = function (events, callback) { };
     ;
@@ -33,7 +33,7 @@ var Tag = (function (_super) {
     __extends(Tag, _super);
     function Tag(props) {
         _super.call(this, props);
-        observable_1["default"](this);
+        observable(this);
     }
     Tag.prototype.on = function (events, callback) { };
     Tag.prototype.one = function (events, callback) { };
@@ -70,7 +70,9 @@ function mount(selector, tag, props) {
                 }
                 var tagClass = tagClasses[tagName];
                 try {
-                    ReactDOM.render(React.createElement(tagClass, {}), node);
+                    var props_1 = {};
+                    _.each(node.attributes, function (n) { props_1[n.name] = n.value; });
+                    ReactDOM.render(React.createElement(tagClass, props_1), node);
                 }
                 catch (ex) {
                     throw "failed to mount " + tagName + "() on DOM node <" + tagName + ">, error: " + ex.message;

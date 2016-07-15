@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -23,11 +23,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="component.ts" />
+    <TypeScriptCompile Include="declarations.ts" />
     <TypeScriptCompile Include="index.ts" />
-    <TypeScriptCompile Include="observable.ts" />
     <Content Include="web.config" />
     <TypeScriptCompile Include="types.ts" />
-    <TypeScriptCompile Include="_references.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="rioct.ts" />
