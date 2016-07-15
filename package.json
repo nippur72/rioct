@@ -1,6 +1,6 @@
 {
   "name": "rioct",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Template library for react",
   "dependencies": {
     "lodash": "^4.13.1",
@@ -15,10 +15,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "man": "dist/index.js",
+  },  
   "typescript": {
-    "definition": "dist/index.d.ts"
+    "definition": "index.d.ts"
   },
   "author": "Antonino Porcino <nino.porcino@gmail.com>",
   "license": "MIT",

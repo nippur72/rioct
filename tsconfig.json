@@ -5,15 +5,13 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "declaration": true,
-        "sourceMap": true,
-        "sourceRoot": "src",
-        "outDir": "dist"        
+        "sourceMap": true
     },
     "files": [
-        "src/declarations.ts",
-        "src/types.ts",        
-        "src/component.ts",
-        "src/rioct.ts",
-        "src/index.ts"       
+        "declarations.ts",
+        "types.ts",        
+        "component.ts",
+        "rioct.ts",
+        "index.ts"       
     ]
 }
