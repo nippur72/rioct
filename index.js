@@ -1,5 +1,6 @@
 "use strict";
-var Rioct = require("./rioct");
-exports.__esModule = true;
-exports["default"] = Rioct;
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require("./rioct"));
 //# sourceMappingURL=index.js.map
