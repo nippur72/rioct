@@ -2,7 +2,7 @@
 import _ = require("lodash");
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import observable from "./observable";
+import * as observable from "riot-observable";
 import Component from "./component";
 
 export class Observable {

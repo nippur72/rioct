@@ -6,6 +6,7 @@
     "lodash": "^3.10.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
+    "riot-observable": "^3.0.0-alpha.1"
   },
   "devDependencies": {
     "@types/lodash": "0.0.27",
