@@ -26,7 +26,6 @@
     <TypeScriptCompile Include="src\declarations.ts" />
     <TypeScriptCompile Include="src\index.ts" />
     <Content Include="web.config" />
-    <TypeScriptCompile Include="src\types.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\rioct.ts" />

@@ -1,7 +1,7 @@
 ﻿
-import * as _ from "lodash";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import { each } from "lodash";
+import { createElement } from "react";
+import { render } from "react-dom";
 import * as observable from "riot-observable";
 import Component from "./component";
             
@@ -16,7 +16,13 @@ export class Observable {
    }
 }
 
-export class Tag extends Component implements Observable {
+export class Tag extends Component {
+   update() {
+      this.forceUpdate();
+   }
+}
+
+export class ObservableTag extends Tag implements Observable {
    on(events: string, callback: Function) {}
    one(events: string, callback: Function) {}
    off(events: string) {}
@@ -33,10 +39,6 @@ export class Tag extends Component implements Observable {
       });
       */
    }
-
-   update() {
-      this.forceUpdate();
-   }
 }
 
 export function mount(selector?: string, tag?: any, props?: any) {
@@ -46,22 +48,22 @@ export function mount(selector?: string, tag?: any, props?: any) {
          throw `mount node '${selector}' not found`;
       }
       updateStyles();
-      ReactDOM.render( React.createElement(tag, props), mountNode);
+      render(createElement(tag, props), mountNode);
    }
    else {
       updateStyles();
       var tagList = Object.keys(tags);
-      _.each(tagList, tagName => {
+      tagList.forEach(tagName => {
          let nodes = document.querySelectorAll(tagName);
-         _.each(nodes, node => {
+         each(nodes, node => {
             if(node.childNodes.length) {
                console.warn(`the mounting node <${tagName}> should not have children`);
             }
             let tagClass = tagClasses[tagName];
             try {
                let props = {};               
-               _.each(node.attributes, n => { props[n.name] = n.value; });
-               ReactDOM.render( React.createElement(tagClass, props), node);
+               each(node.attributes, n => { props[n.name] = n.value; });
+               render(createElement(tagClass, props), node);
             }
             catch(ex) {
                throw `failed to mount ${tagName}() on DOM node <${tagName}>, error: ${ex.message}`;
@@ -70,6 +72,8 @@ export function mount(selector?: string, tag?: any, props?: any) {
       });
    }
 }
+
+export interface tagEntry { [tagName: string]: ()=>void }
 
 export var tags:tagEntry = {};
 

@@ -4,9 +4,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var _ = require("lodash");
-var React = require("react");
-var ReactDOM = require("react-dom");
+var lodash_1 = require("lodash");
+var react_1 = require("react");
+var react_dom_1 = require("react-dom");
 var observable = require("riot-observable");
 var component_1 = require("./component");
 var Observable = (function () {
@@ -31,25 +31,33 @@ var Observable = (function () {
 exports.Observable = Observable;
 var Tag = (function (_super) {
     __extends(Tag, _super);
-    function Tag(props) {
-        _super.call(this, props);
-        observable(this);
+    function Tag() {
+        _super.apply(this, arguments);
     }
-    Tag.prototype.on = function (events, callback) { };
-    Tag.prototype.one = function (events, callback) { };
-    Tag.prototype.off = function (events) { };
-    Tag.prototype.trigger = function (eventName) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-    };
     Tag.prototype.update = function () {
         this.forceUpdate();
     };
     return Tag;
 }(component_1["default"]));
 exports.Tag = Tag;
+var ObservableTag = (function (_super) {
+    __extends(ObservableTag, _super);
+    function ObservableTag(props) {
+        _super.call(this, props);
+        observable(this);
+    }
+    ObservableTag.prototype.on = function (events, callback) { };
+    ObservableTag.prototype.one = function (events, callback) { };
+    ObservableTag.prototype.off = function (events) { };
+    ObservableTag.prototype.trigger = function (eventName) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+    };
+    return ObservableTag;
+}(Tag));
+exports.ObservableTag = ObservableTag;
 function mount(selector, tag, props) {
     if (selector && tag) {
         var mountNode = document.querySelector(selector);
@@ -57,22 +65,22 @@ function mount(selector, tag, props) {
             throw "mount node '" + selector + "' not found";
         }
         updateStyles();
-        ReactDOM.render(React.createElement(tag, props), mountNode);
+        react_dom_1.render(react_1.createElement(tag, props), mountNode);
     }
     else {
         updateStyles();
         var tagList = Object.keys(exports.tags);
-        _.each(tagList, function (tagName) {
+        tagList.forEach(function (tagName) {
             var nodes = document.querySelectorAll(tagName);
-            _.each(nodes, function (node) {
+            lodash_1.each(nodes, function (node) {
                 if (node.childNodes.length) {
                     console.warn("the mounting node <" + tagName + "> should not have children");
                 }
                 var tagClass = tagClasses[tagName];
                 try {
                     var props_1 = {};
-                    _.each(node.attributes, function (n) { props_1[n.name] = n.value; });
-                    ReactDOM.render(React.createElement(tagClass, props_1), node);
+                    lodash_1.each(node.attributes, function (n) { props_1[n.name] = n.value; });
+                    react_dom_1.render(react_1.createElement(tagClass, props_1), node);
                 }
                 catch (ex) {
                     throw "failed to mount " + tagName + "() on DOM node <" + tagName + ">, error: " + ex.message;

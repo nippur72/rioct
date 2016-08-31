@@ -9,8 +9,7 @@
         "outDir": "dist"
     },
     "files": [
-        "src/declarations.ts",
-        "src/types.ts",        
+        "src/declarations.ts",              
         "src/component.ts",
         "src/rioct.ts",
         "src/index.ts"       

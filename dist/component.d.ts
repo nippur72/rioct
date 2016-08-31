@@ -4,9 +4,6 @@ export declare class Component implements React.ComponentLifecycle<any, any> {
     setState(f: (prevState: any, props: any) => any, callback?: () => any): void;
     setState(state: any, callback?: () => any): void;
     forceUpdate(callBack?: () => any): void;
-    props: any;
-    state: any;
-    context: {};
 }
 declare var patched: typeof Component;
 export default patched;
