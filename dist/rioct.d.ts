@@ -23,5 +23,6 @@ export interface tagEntry {
 export declare var tags: tagEntry;
 export declare var styles: any[];
 export declare function updateStyles(): void;
-export declare var styleParser: (css: string) => string;
+export declare type StyleParser = (css: string) => string;
+export declare function setStyleParser(parser: StyleParser): void;
 export declare function template(tagName: string | Function): (target: Function) => void;

@@ -92,7 +92,13 @@ export function updateStyles() {
    styleNode.innerHTML = styleParser ? styleParser(allStyles) : allStyles;
 }
 
-export var styleParser: (css: string)=>string;
+export type StyleParser = (css: string) => string;
+
+var styleParser: StyleParser;
+
+export function setStyleParser(parser: StyleParser) {
+   styleParser = parser;
+}
 
 // @template decorator
 export function template(tagName: string|Function) {

@@ -101,9 +101,14 @@ function updateStyles() {
         document.head.appendChild(styleNode);
     }
     var allStyles = exports.styles.join('');
-    styleNode.innerHTML = exports.styleParser ? exports.styleParser(allStyles) : allStyles;
+    styleNode.innerHTML = styleParser ? styleParser(allStyles) : allStyles;
 }
 exports.updateStyles = updateStyles;
+var styleParser;
+function setStyleParser(parser) {
+    styleParser = parser;
+}
+exports.setStyleParser = setStyleParser;
 function template(tagName) {
     if (typeof (tagName) === "string") {
         return function (target) {
