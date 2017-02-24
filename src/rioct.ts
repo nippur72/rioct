@@ -2,42 +2,11 @@
 import { each } from "lodash";
 import { createElement } from "react";
 import { render } from "react-dom";
-import * as observable from "riot-observable";
 import Component from "./component";
             
-export class Observable {
-   on(events: string, callback: Function) {};
-   one(events: string, callback: Function) {};
-   off(events: string) {};
-   trigger(eventName: string, ...args) {};
-
-   constructor() {
-      observable(this);
-   }
-}
-
 export class Tag extends Component {
    update() {
       this.forceUpdate();
-   }
-}
-
-export class ObservableTag extends Tag implements Observable {
-   on(events: string, callback: Function) {}
-   one(events: string, callback: Function) {}
-   off(events: string) {}
-   trigger(eventName: string, ...args) {}   
-
-   constructor(props) {
-      super(props);
-      observable(this);
-      /*
-      Object.defineProperty(this, "_refs", {
-         get: ()=> this.refs,
-         enumerable: true,
-         configurable: true
-      });
-      */
    }
 }
 

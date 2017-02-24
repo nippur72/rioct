@@ -1,38 +1,23 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
 var lodash_1 = require("lodash");
 var react_1 = require("react");
 var react_dom_1 = require("react-dom");
-var observable = require("riot-observable");
 var component_1 = require("./component");
-var Observable = (function () {
-    function Observable() {
-        observable(this);
-    }
-    Observable.prototype.on = function (events, callback) { };
-    ;
-    Observable.prototype.one = function (events, callback) { };
-    ;
-    Observable.prototype.off = function (events) { };
-    ;
-    Observable.prototype.trigger = function (eventName) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-    };
-    ;
-    return Observable;
-}());
-exports.Observable = Observable;
 var Tag = (function (_super) {
     __extends(Tag, _super);
     function Tag() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Tag.prototype.update = function () {
         this.forceUpdate();
@@ -40,24 +25,6 @@ var Tag = (function (_super) {
     return Tag;
 }(component_1["default"]));
 exports.Tag = Tag;
-var ObservableTag = (function (_super) {
-    __extends(ObservableTag, _super);
-    function ObservableTag(props) {
-        _super.call(this, props);
-        observable(this);
-    }
-    ObservableTag.prototype.on = function (events, callback) { };
-    ObservableTag.prototype.one = function (events, callback) { };
-    ObservableTag.prototype.off = function (events) { };
-    ObservableTag.prototype.trigger = function (eventName) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-    };
-    return ObservableTag;
-}(Tag));
-exports.ObservableTag = ObservableTag;
 function mount(selector, tag, props) {
     if (selector && tag) {
         var mountNode = document.querySelector(selector);

@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -23,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\component.ts" />
-    <TypeScriptCompile Include="src\declarations.ts" />
     <TypeScriptCompile Include="src\index.ts" />
     <Content Include="web.config" />
   </ItemGroup>
