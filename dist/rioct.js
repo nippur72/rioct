@@ -9,6 +9,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+exports.__esModule = true;
 var lodash_1 = require("lodash");
 var react_1 = require("react");
 var react_dom_1 = require("react-dom");

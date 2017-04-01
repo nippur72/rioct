@@ -10,9 +10,10 @@ export declare class Component implements React.ComponentLifecycle<any, any> {
    setState(state: any, callback?: () => any): void;
    forceUpdate(callBack?: () => any): void;
    /*render?: () => JSX.Element;*/
-   /*props: any;*/
-   /*state: any;*/
-   /*context: {};*/
+   props: any;
+   state: any;
+   context: any;
+   refs: any;
 }
 
 var patched = React.Component as (typeof Component);
