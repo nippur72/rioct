@@ -1,10 +1,9 @@
 ﻿
-import { each } from "lodash";
 import { createElement } from "react";
 import { render } from "react-dom";
 import Component from "./component";
             
-export class Tag extends Component {
+export class Tag<P = any, S = any> extends Component<P,S> {
    update() {
       this.forceUpdate();
    }
@@ -19,6 +18,7 @@ export function mount(selector?: string, tag?: any, props?: any) {
       updateStyles();
       render(createElement(tag, props), mountNode);
    }
+   /*
    else {
       updateStyles();
       var tagList = Object.keys(tags);
@@ -40,15 +40,18 @@ export function mount(selector?: string, tag?: any, props?: any) {
          });
       });
    }
+   */
 }
 
+/*
 export interface tagEntry { [tagName: string]: ()=>void }
 
 export var tags:tagEntry = {};
 
 var tagClasses: { [tagName: string]: any } = {};
+*/
 
-export var styles = [];
+export let styles = [];
 
 export function updateStyles() {
    var styleNode = document.querySelector("style[name=rioct]") as HTMLStyleElement;
@@ -63,12 +66,13 @@ export function updateStyles() {
 
 export type StyleParser = (css: string) => string;
 
-var styleParser: StyleParser;
+let styleParser: StyleParser;
 
 export function setStyleParser(parser: StyleParser) {
    styleParser = parser;
 }
 
+/*
 // @template decorator
 export function template(tagName: string|Function) {
    if(typeof(tagName)==="string") 
@@ -94,4 +98,4 @@ export function template(tagName: string|Function) {
       }
    }
 }
-
+*/
