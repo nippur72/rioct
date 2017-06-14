@@ -1,6 +1,8 @@
 /// <reference types="react" />
 import * as React from "react";
-export declare class Component<P, S> implements React.ComponentLifecycle<P, S> {
+export interface Component<P, S> extends React.ComponentLifecycle<P, S> {
+}
+export declare class Component<P, S> {
     constructor(props?: P, context?: any);
     setState<K extends keyof S>(f: (prevState: S, props: P) => Pick<S, K>, callback?: () => any): void;
     setState<K extends keyof S>(state: Pick<S, K>, callback?: () => any): void;
