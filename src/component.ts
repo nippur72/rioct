@@ -2,7 +2,7 @@
 // "render" is a property and not a member function
 //
 
-import * as React from "react";
+// import * as React from "react";
 
 /*
 export declare class Component implements React.ComponentLifecycle<any, any> {
@@ -18,6 +18,7 @@ export declare class Component implements React.ComponentLifecycle<any, any> {
 }
 */
 
+/*
 export declare interface Component<P, S> extends React.ComponentLifecycle<P, S> { }
 export declare class Component<P, S> {
    constructor(props?: P, context?: any);
@@ -42,4 +43,4 @@ export declare class Component<P, S> {
 var patched = React.Component as (typeof Component);
 
 export default patched;
-
+*/
